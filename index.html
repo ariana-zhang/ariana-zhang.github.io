@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ariana Zhang's Portfolio | Rutgers Business School</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans / Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        rbsRed: '#CC0033', // Official Rutgers Scarlet Red accent
+                        rbsRedLight: '#FDF2F4',
+                        rbsTextDark: '#0D0F12',
+                        rbsTextMuted: '#525B6A',
+                        rbsBgLight: '#F9FAFB',
+                        rbsBorder: '#E5E7EB',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-rbsTextDark font-sans antialiased min-h-screen flex flex-col selection:bg-rbsRed selection:text-white">
+
+    <!-- Navbar -->
+    <header class="w-full bg-white border-b border-gray-100 py-5 sticky top-0 z-50 backdrop-blur-md bg-white/90">
+        <div class="max-w-6xl mx-auto px-6 sm:px-8 flex justify-between items-center">
+            <!-- Top Left Logo -->
+            <a href="#hero" class="flex items-center space-x-2 text-base sm:text-lg font-bold tracking-tight">
+                <span class="text-rbsRed font-extrabold tracking-wider">RBS</span>
+                <span class="text-gray-300 font-normal">|</span>
+                <span class="text-rbsTextDark font-semibold">Ariana's Portfolio</span>
+            </a>
+
+            <!-- Top Right Nav Links -->
+            <nav class="hidden sm:flex items-center space-x-8 text-sm font-medium text-rbsTextMuted">
+                <a href="#about" class="hover:text-rbsTextDark transition-colors">About</a>
+                <a href="#skills" class="hover:text-rbsTextDark transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-rbsTextDark transition-colors">Projects</a>
+                <a href="mailto:az561@scarletmail.rutgers.edu" class="bg-[#0B0F19] text-white px-5 py-2.5 rounded-full text-xs font-semibold hover:bg-black transition-all shadow-sm hover:shadow">
+                    Contact Me
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menu-btn" class="sm:hidden text-rbsTextMuted hover:text-rbsTextDark focus:outline-none" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden sm:hidden bg-white border-b border-gray-100 px-6 py-4 space-y-3 text-sm font-medium text-rbsTextMuted">
+            <a href="#about" class="block hover:text-rbsTextDark">About</a>
+            <a href="#skills" class="block hover:text-rbsTextDark">Skills</a>
+            <a href="#projects" class="block hover:text-rbsTextDark">Projects</a>
+            <a href="mailto:az561@scarletmail.rutgers.edu" class="inline-block mt-2 bg-[#0B0F19] text-white px-5 py-2 rounded-full text-xs font-semibold">
+                Contact Me
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-6xl w-full mx-auto px-6 sm:px-8 py-12 md:py-20 space-y-20">
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 items-center scroll-mt-28">
+            
+            <!-- Left Column: Circular Profile Card with Centered Face Crop -->
+            <div class="md:col-span-4 flex flex-col items-center text-center">
+                <div class="relative group">
+                    <div class="w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-white shadow-xl bg-gray-100 flex items-center justify-center">
+                        <!-- Profile Image configured with object-position: center 25% to center face precisely -->
+                        <img 
+                            src="profile.jpg" 
+                            alt="Ariana Zhang - Rutgers Business School Student" 
+                            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                            style="object-position: center 25%;"
+                            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600';"
+                        />
+                    </div>
+                </div>
+
+                <div class="mt-5 space-y-1">
+                    <h2 class="text-xl sm:text-2xl font-bold text-rbsTextDark tracking-tight">Ariana Zhang</h2>
+                    <p class="text-sm font-semibold text-rbsRed">Rutgers Business School</p>
+                    <p class="text-xs text-rbsTextMuted font-medium">Marketing & Supply Chain Management</p>
+                </div>
+            </div>
+
+            <!-- Right Column: Headline, Personal Statement & Actions -->
+            <div id="about" class="md:col-span-8 space-y-6 text-left scroll-mt-28">
+                
+                <!-- Main Headline -->
+                <h1 class="text-3xl sm:text-4xl md:text-[2.65rem] font-extrabold text-rbsTextDark leading-[1.18] tracking-tight">
+                    Connecting marketing strategy & fashion supply chains at Rutgers.
+                </h1>
+
+                <!-- Personal Statement / Introduction Paragraph -->
+                <p class="text-rbsTextMuted text-base sm:text-lg font-normal leading-relaxed max-w-2xl">
+                    Hi, my name is Ariana. I am passionate about marketing and supply chain, specifically in fashion, and I love working with others to create experiences and connections.
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap items-center gap-4 pt-2">
+                    <a href="mailto:az561@scarletmail.rutgers.edu" class="px-5 py-2.5 bg-gray-100 hover:bg-gray-200 text-rbsTextDark text-sm font-medium rounded-xl transition-all border border-gray-200/80 inline-flex items-center gap-2">
+                        <i class="fa-regular fa-envelope text-rbsRed"></i>
+                        <span>Email Me</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ariana-zhang-2b5378353" target="_blank" rel="noopener noreferrer" class="text-rbsTextMuted hover:text-rbsTextDark text-sm font-medium transition-colors inline-flex items-center gap-1.5 py-2.5 px-3">
+                        <i class="fa-brands fa-linkedin text-blue-600 text-base"></i>
+                        <span>LinkedIn Profile</span>
+                        <span class="text-base">&rarr;</span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION: Core Skills -->
+        <section id="skills" class="pt-6 scroll-mt-28 space-y-6">
+            <div class="bg-gray-50/80 p-8 rounded-3xl border border-gray-100 space-y-6">
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-rbsTextDark tracking-tight">Core Skills & Competencies</h2>
+                    <p class="text-xs sm:text-sm text-rbsTextMuted mt-1">Highlighted capabilities across marketing, retail operations, and team collaboration.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <!-- Skill 1 -->
+                    <div class="p-5 bg-white rounded-2xl border border-gray-100 shadow-2xs hover:shadow-sm transition-all">
+                        <div class="w-9 h-9 rounded-lg bg-red-50 text-rbsRed flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-headset text-sm"></i>
+                        </div>
+                        <h3 class="text-sm font-bold text-rbsTextDark mb-1">Customer Service</h3>
+                        <p class="text-xs text-rbsTextMuted leading-relaxed">Building positive customer interactions, brand loyalty, and memorable service experiences.</p>
+                    </div>
+
+                    <!-- Skill 2 -->
+                    <div class="p-5 bg-white rounded-2xl border border-gray-100 shadow-2xs hover:shadow-sm transition-all">
+                        <div class="w-9 h-9 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-boxes-stacked text-sm"></i>
+                        </div>
+                        <h3 class="text-sm font-bold text-rbsTextDark mb-1">Inventory Management</h3>
+                        <p class="text-xs text-rbsTextMuted leading-relaxed">Tracking stock levels, product availability, and retail supply chain operations efficiently.</p>
+                    </div>
+
+                    <!-- Skill 3 -->
+                    <div class="p-5 bg-white rounded-2xl border border-gray-100 shadow-2xs hover:shadow-sm transition-all">
+                        <div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-file-excel text-sm"></i>
+                        </div>
+                        <h3 class="text-sm font-bold text-rbsTextDark mb-1">Microsoft Excel</h3>
+                        <p class="text-xs text-rbsTextMuted leading-relaxed">Data organization, spreadsheet modeling, and quantitative analysis for business decision-making.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Projects -->
+        <section id="projects" class="pt-8 border-t border-gray-100 scroll-mt-28 space-y-10">
+            
+            <div class="max-w-3xl space-y-2">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-rbsTextDark tracking-tight">
+                    Projects & Academic Work
+                </h2>
+                <p class="text-rbsTextMuted text-sm sm:text-base leading-relaxed">
+                    Selected projects highlighting teamwork, product positioning, and supply chain strategy.
+                </p>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Project 1: Intro to Marketing -->
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between space-y-6 group">
+                    <div class="space-y-4">
+                        <div class="w-11 h-11 rounded-2xl bg-red-50 text-rbsRed flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <div>
+                            <span class="inline-block bg-rbsRedLight text-rbsRed text-xs font-semibold px-3 py-1 rounded-full mb-2">
+                                Marketing Strategy & Product Development
+                            </span>
+                            <h3 class="text-xl font-bold text-rbsTextDark group-hover:text-rbsRed transition-colors">
+                                Intro to Marketing Project
+                            </h3>
+                        </div>
+                        <p class="text-sm text-rbsTextMuted leading-relaxed">
+                            Collaborated with a cross-functional team to create an innovative product concept and presented the complete marketing mix, brand positioning, and launch strategy to the class.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-50 flex items-center justify-between text-xs font-medium text-rbsTextMuted">
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-users text-gray-400"></i> Team Presentation</span>
+                        <span class="text-rbsTextDark font-semibold">Rutgers Business School</span>
+                    </div>
+                </div>
+
+                <!-- Project 2: Fashion Supply Chain & Inventory Analysis -->
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between space-y-6 group">
+                    <div class="space-y-4">
+                        <div class="w-11 h-11 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-shirt"></i>
+                        </div>
+                        <div>
+                            <span class="inline-block bg-blue-50 text-blue-600 text-xs font-semibold px-3 py-1 rounded-full mb-2">
+                                Supply Chain & Operations
+                            </span>
+                            <h3 class="text-xl font-bold text-rbsTextDark group-hover:text-blue-600 transition-colors">
+                                Fashion Supply Chain & Inventory Analysis
+                            </h3>
+                        </div>
+                        <p class="text-sm text-rbsTextMuted leading-relaxed">
+                            Analyzed apparel inventory management and demand forecasting models in Microsoft Excel to optimize retail product availability and minimize logistics bottlenecks.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-50 flex items-center justify-between text-xs font-medium text-rbsTextMuted">
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-chart-line text-gray-400"></i> Inventory & Analytics</span>
+                        <span class="text-rbsTextDark font-semibold">Rutgers Business School</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-100 py-8 bg-white mt-12 text-xs text-rbsTextMuted">
+        <div class="max-w-6xl mx-auto px-6 sm:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center space-x-2">
+                <span class="text-rbsRed font-bold">RBS</span>
+                <span>&copy; 2026 Ariana Zhang — Rutgers Business School Portfolio.</span>
+            </div>
+            <div class="flex items-center space-x-6 font-medium">
+                <a href="mailto:az561@scarletmail.rutgers.edu" class="hover:text-rbsTextDark">Email</a>
+                <a href="https://www.linkedin.com/in/ariana-zhang-2b5378353" target="_blank" class="hover:text-rbsTextDark">LinkedIn</a>
+                <a href="#hero" class="hover:text-rbsTextDark">Back to Top &uarr;</a>
+            </div>
+        </div>
+    </footer>
